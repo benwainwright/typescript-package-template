@@ -14,14 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
     "paths": {
-      "@constants": ["src/lib/constants"],
-      "@domain": ["src/lib/domain"],
-      "@entry": ["src"],
-      "@core": ["src/lib/core"],
-      "@namespaces": ["src/lib/namespaces"],
-      "@types": ["src/lib/types"],
-      "@errors": ["src/lib/errors"],
-      "@test-support": ["test-support"]
+      "@subpackageOne": ["src/lib/subpackageOne"],
+      "@subpackageTwo": ["src/lib/subpackageTwo"]
     }
   },
   "$schema": "https://json.schemastore.org/tsconfig",
