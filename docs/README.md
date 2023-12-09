@@ -1,96 +1,46 @@
-rtm-typescript
+package
 
-# rtm-typescript
+# package
 
 ## Table of contents
 
 ### Functions
 
-- [initialiseApi](README.md#initialiseapi)
-
-### Interfaces
-
-- [Auth](interfaces/Auth.md)
-- [CheckTokenParams](interfaces/CheckTokenParams.md)
-- [GetListParams](interfaces/GetListParams.md)
-- [GetTokenParams](interfaces/GetTokenParams.md)
-- [IRememberTheMilkApi](interfaces/IRememberTheMilkApi.md)
-- [RtmApiConfig](interfaces/RtmApiConfig.md)
-- [SuccessResponse](interfaces/SuccessResponse.md)
-- [Tasks](interfaces/Tasks.md)
-- [Test](interfaces/Test.md)
-
-### Classes
-
-- [RtmApiFailedResponseError](classes/RtmApiFailedResponseError.md)
-- [RtmHttpError](classes/RtmHttpError.md)
-- [RtmTypescriptError](classes/RtmTypescriptError.md)
-
-### Enumerations
-
-- [ClientPermissions](enums/ClientPermissions.md)
-
-### Type Aliases
-
-- [ExpandRecursively](README.md#expandrecursively)
+- [functionOne](README.md#functionone)
+- [functionTwo](README.md#functiontwo)
 
 ## Functions
 
-### initialiseApi
+### functionOne
 
-▸ **initialiseApi**(`config`): [`IRememberTheMilkApi`](interfaces/IRememberTheMilkApi.md)
+▸ **functionOne**(): `string`
 
-Entry point to the API. Calling it with valid credentials will initialise and return an instantiated [IRememberTheMilkApi](interfaces/IRememberTheMilkApi.md)
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `config` | [`RtmApiConfig`](interfaces/RtmApiConfig.md) | Configuration object for the API |
+a function that returns 'Foo'
 
 #### Returns
 
-[`IRememberTheMilkApi`](interfaces/IRememberTheMilkApi.md)
+`string`
 
-**`Example`**
-
-```TypeScript
- import { initialiseApi, ClientPermissions } from "rtm-typescript";
-
- const key = "my-api-key";
- const secret = "my-shared-secret";
-
- const myAsyncFunction = async () => {
-
-   const client = initialiseApi({
-     key,
-     secret,
-     permissions: ClientPermissions.Read,
-   });
-
-   const result = await client.tasks.getList({ list_id: "2"});
- }
-```
+- 'Foo'
 
 #### Defined in
 
-[src/lib/core/initialise-api.ts:63](https://github.com/benwainwright/rtm-typescript/blob/566fc76/src/lib/core/initialise-api.ts#L63)
+lib/subpackageOne/function-one.ts:8
 
-## Type Aliases
+---
 
-### ExpandRecursively
+### functionTwo
 
-Ƭ **ExpandRecursively**\<`T`\>: `T` extends `object` ? `T` extends infer O ? \{ [K in keyof O]: ExpandRecursively\<O[K]\> } : `never` : `T`
+▸ **functionTwo**(): `string`
 
-A helper type that expands types so that they resolve to their final forma
-in editor tooltips
+a function that returns 'Foo'
 
-#### Type parameters
+#### Returns
 
-| Name |
-| :------ |
-| `T` |
+`string`
+
+- 'Foo'
 
 #### Defined in
 
-[src/lib/types/expand-recursively.ts:7](https://github.com/benwainwright/rtm-typescript/blob/566fc76/src/lib/types/expand-recursively.ts#L7)
+lib/subpackageTwo/function-two.ts:8

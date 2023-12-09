@@ -1,7 +1,6 @@
-import { readFileSync } from "node:fs";
+import { readFileSync } from "fs";
 
 export const getPackageName = () => {
-  return (
-    JSON.parse(readFileSync("./package.json", "utf8")) as Record<string, string>
-  )["name"];
+  const contents = readFileSync("./package.json", "utf8");
+  return (JSON.parse(contents) as Record<string, string>)["name"];
 };

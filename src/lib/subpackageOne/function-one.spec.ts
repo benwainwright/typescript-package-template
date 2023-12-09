@@ -1,4 +1,4 @@
-import { functionOne } from "./function-one";
+import { functionOne } from "./function-one.js";
 
 describe("functionOne", () => {
   it("should return Foo when called", () => {

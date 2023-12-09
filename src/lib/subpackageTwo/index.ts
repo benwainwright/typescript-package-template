@@ -1,1 +1,1 @@
-export { functionTwo } from "./function-two";
+export { functionTwo } from "./function-two.js";

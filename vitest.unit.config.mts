@@ -1,10 +1,12 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+const paths = tsconfigPaths();
+
 export default defineConfig({
-  plugins: [tsconfigPaths()],
+  plugins: [paths],
   test: {
-    setupFiles: ["./test-support/setup-tests.ts"],
+    setupFiles: ["./src/test-support/setup-tests.ts"],
     globals: true,
     include: ["src/lib/**/*.spec.ts"],
     coverage: {
@@ -12,12 +14,13 @@ export default defineConfig({
       include: ["src/lib/**/*.ts"],
       provider: "istanbul",
       cleanOnRerun: true,
-      thresholdAutoUpdate: true,
       reporter: ["text", "html", "lcov"],
-      functions: 100,
-      lines: 100,
-      statements: 100,
-      branches: 100,
+      thresholds: {
+        functions: 100,
+        lines: 100,
+        statements: 100,
+        branches: 100,
+      },
     },
   },
 });
